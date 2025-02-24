@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import companyService from './services/companies'
 import Header from './components/Header'
 import SearchFilter from './components/SearchFilter'
 import CompanyForm from './components/CompanyForm'
 import Company from "./components/Company"
-import companyService from './services/companies'
+import NoResults from './components/NoResults'
+import NoCompanies from './components/NoCompanies'
 import Footer from './components/Footer'
 
 function App() {
@@ -28,6 +30,61 @@ function App() {
     location: newLocation
   }
 
+  const returnFilteredCompanies = () => {
+    return companies
+    .filter(company => 
+      company.companyName.slice(0, companyFilter.length).trim().toLowerCase() === companyFilter.toLowerCase())
+    .map(company => 
+        <Company 
+          key={company.id}
+          id={company.id}
+          name={company.companyName}
+          title={company.jobTitle}
+          location={company.location}
+          onClick={deleteExistingCompany}
+          />
+    )
+  }
+
+  const returnAllCompanies = () => {
+    return (
+      companies.map(company => 
+        <Company 
+          key={company.id}
+          id={company.id}
+          name={company.companyName}
+          title={company.jobTitle}
+          location={company.location}
+          onClick={deleteExistingCompany}
+        />
+      )
+    )
+  }
+
+  const checkForCompanyFilter = () => {
+    if(companies.length && companyFilter) {
+      const filter = compareCompanyNamesToFilter()
+      if(filter.length) {
+        return (
+          returnFilteredCompanies()
+        )
+      }else {
+        return (
+          <NoResults />
+        )
+      }
+      
+    }else if(companies.length) {
+      return (
+        returnAllCompanies()
+      )
+    }else {
+      return (
+        <NoCompanies />
+      )
+    }  
+  }
+
   const addCompany = (event) => {
     event.preventDefault()
     if(findExisting('companyName', newCompanyName).length 
@@ -47,6 +104,12 @@ function App() {
     setNewJobTitle('')
     setNewLocation('')
     }
+  }
+
+  const compareCompanyNamesToFilter = () => {
+    return companies
+    .filter(company => 
+      company.companyName.slice(0, companyFilter.length).trim().toLowerCase() === companyFilter.toLowerCase())
   }
 
   const handleCompanyNameChange = (event) => {
@@ -102,34 +165,7 @@ function App() {
       <ul
         className="flex flex-wrap justify-center items-center gap-x-4 gap-y-16 pb-[40px] min-h-[105px]"
       >
-      {
-        companyFilter ?
-
-          companies
-          .filter(company => 
-            company.companyName.slice(0, companyFilter.length).trim().toLowerCase() === companyFilter.toLowerCase())
-          .map(company => 
-              <Company 
-                key={company.id}
-                id={company.id}
-                name={company.companyName}
-                title={company.jobTitle}
-                location={company.location}
-                onClick={deleteExistingCompany}
-                />
-          )
-          :
-          companies.map(company => 
-            <Company 
-              key={company.id}
-              id={company.id}
-              name={company.companyName}
-              title={company.jobTitle}
-              location={company.location}
-              onClick={deleteExistingCompany}
-            />
-          )
-        }
+      {checkForCompanyFilter()}
       </ul>
       <Footer />
     </div>
