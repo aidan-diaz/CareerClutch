@@ -1,5 +1,5 @@
 # CareerClutch
-![Thumbnail]()
+![Thumbnail](public/careerClutch.mp4)
 
 Link to Project: (LOCAL ONLY AT THIS TIME)
 
