@@ -59,6 +59,10 @@ function App() {
     setNewLocation(event.target.value)
   }
 
+  const handleFilterChange = (event) => {
+    setCompanyFilter(event.target.value)
+  }
+
   const findExisting = (property, state) => {
     return companies.filter(company => company[property].trim().toLowerCase() === state.trim().toLowerCase())
   }
@@ -83,7 +87,7 @@ function App() {
   return (
     <div>
       <h1>Hitlist</h1>
-      <SearchFilter />
+      <SearchFilter onChange={handleFilterChange} filter={companyFilter} />
       <CompanyForm
         onSubmit={addCompany}
         handleCompanyNameChange={handleCompanyNameChange}
@@ -95,17 +99,33 @@ function App() {
       />
       <ul>
       {
-        companies.map(company => 
-          <Company 
-            key={company.id}
-            id={company.id}
-            name={company.companyName}
-            title={company.jobTitle}
-            location={company.location}
-            onClick={deleteExistingCompany}
-          />
-        )
-      }
+        companyFilter ?
+
+          companies
+          .filter(company => 
+            company.companyName.slice(0, companyFilter.trim().toLowerCase().length) === companyFilter.toLowerCase())
+          .map(company => 
+              <Company 
+                key={company.id}
+                id={company.id}
+                name={company.companyName}
+                title={company.jobTitle}
+                location={company.location}
+                onClick={deleteExistingCompany}
+                />
+          )
+          :
+          companies.map(company => 
+            <Company 
+              key={company.id}
+              id={company.id}
+              name={company.companyName}
+              title={company.jobTitle}
+              location={company.location}
+              onClick={deleteExistingCompany}
+            />
+          )
+        }
       </ul>
     </div>
   )
@@ -122,3 +142,17 @@ export default App
 
 //PUSH WORK
 //allow users to edit company and role names
+//filter for all three categories (name, title, location)
+
+/*
+
+filter ? 
+
+check to see if current state equals corresponding portion of companies
+example: if state length is 2, check the first two characters of each company to see if they are strictly equal to the state
+if they are equal, then display those companies and hide any that aren't equal
+if they are NOT equal, then do not show any companies
+if nothing is typed into the filter, then show ALL companies
+
+*/
+
