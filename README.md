@@ -3,22 +3,22 @@
 
 Link to Project: (LOCAL ONLY AT THIS TIME)
 
-## CareerClutch is a hitlisting application that allows users to keep track of companies that they are looking to apply to during their job hunt.
+CareerClutch is a hitlisting application that allows users to keep track of companies that they are looking to apply to during their job hunt.
 
-## TECH USED:
+## Tech Used:
 
 - React
 - CSS + Tailwind
 - JSON Server (to simulate a REST API)
 
 
-## FEATURES
+## Features
 
 - enter a company, job title, and location for each hitlist item
 - filter entered companies by company name
 - delete a company from their hitlist if they wish to do so
 
-## FUTURE GOALS
+## Future Goals
 
 - allow users to update existing companies
 - allow users to enter link to job description
