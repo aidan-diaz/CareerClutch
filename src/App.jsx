@@ -28,7 +28,15 @@ function App() {
 
   const addCompany = (event) => {
     event.preventDefault()
-    companyService
+    if(findExisting('companyName', newCompanyName).length 
+      && findExisting('jobTitle', newJobTitle).length 
+      && findExisting('location', newLocation).length) {
+      alert(`Company Name: ${newCompanyName}, Job Title: ${newJobTitle}, Location: ${newLocation} already exists on Hitlist`)
+      setNewCompanyName('')
+      setNewJobTitle('')
+      setNewLocation('')
+    }else {
+      companyService
       .createNewCompany(companyObject)
       .then(returnedCompany => {
         setCompanies(companies.concat(returnedCompany))
@@ -36,6 +44,7 @@ function App() {
     setNewCompanyName('')
     setNewJobTitle('')
     setNewLocation('')
+    }
   }
 
   const handleCompanyNameChange = (event) => {
@@ -49,11 +58,15 @@ function App() {
     setNewLocation(event.target.value)
   }
 
+  const findExisting = (property, state) => {
+    return companies.filter(company => company[property].trim().toLowerCase() === state.trim().toLowerCase())
+  }
+
   const deleteExistingCompany = (event) => {
     const companyId = event.target.closest('li').id
-    const selectedCompany = companies.filter(company => company.id === companyId)[0].companyName
-    console.log(selectedCompany)
-    if(window.confirm(`Delete ${selectedCompany} from Hitlist?`)) {
+    const selectedForDelete = companies.filter(company => company.id === companyId)[0]
+    console.log(selectedForDelete)
+    if(window.confirm(`Delete (Company Name: ${selectedForDelete.companyName}, JobTitle: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) from Hitlist?`)) {
       companyService
         .deleteCompany(companyId)
         .then(deletedCompany => {
@@ -62,7 +75,7 @@ function App() {
           setCompanies(updatedCompanies)
         })
     }else {
-      alert(`${selectedCompany} will NOT be deleted.`)
+      alert(`(Company Name: ${selectedForDelete.companyName}, JobTitle: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) will NOT be deleted.`)
     }
   }
 
