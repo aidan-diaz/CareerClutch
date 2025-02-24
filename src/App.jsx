@@ -19,7 +19,6 @@ function App() {
         setCompanies(initialCompanies)
       })
   }, [])
-  console.log('companies: ', companies.length, companies)
 
   const companyObject = {
     companyName: newCompanyName,
