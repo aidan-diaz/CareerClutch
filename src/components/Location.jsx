@@ -1,6 +1,6 @@
 const Location = ({ location }) => {
     return (
-        <h3>{location}</h3>
+        <h3 className="text-names">{location}</h3>
     )
 }
 

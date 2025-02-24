@@ -84,8 +84,8 @@ function App() {
   }
 
   return (
-    <div className="bg-background-orange h-screen">
-      <h1 className="pt-[40px] mb-[40px] text-center">Title of App</h1>
+    <div className="bg-background-orange h-full caladea-regular">
+      <h1 className="pt-[40px] mb-[40px] text-center text-[36px] caladea-bold">CareerClutch</h1>
       <SearchFilter onChange={handleFilterChange} filter={companyFilter} />
       <CompanyForm
         onSubmit={addCompany}
@@ -96,9 +96,9 @@ function App() {
         newJobTitle={newJobTitle}
         newLocation={newLocation}
       />
-      <h2 className="text-center mb-[50px]">Your Hitlist</h2>
+      <h2 className="text-center mb-[50px] caladea-bold text-[28px] text-names">Your Hitlist</h2>
       <ul
-        className="flex flex-wrap justify-center items-center gap-x-4 gap-y-16"
+        className="flex flex-wrap justify-center items-center gap-x-4 gap-y-16 pb-[40px]"
       >
       {
         companyFilter ?

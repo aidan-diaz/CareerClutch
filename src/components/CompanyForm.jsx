@@ -4,10 +4,10 @@ const CompanyForm = ({ onSubmit, handleCompanyNameChange, handleJobTitleNameChan
             className="flex flex-col justify-center items-center gap-x-8 gap-y-8 mb-[100px]" 
             onSubmit={onSubmit} id="addCompanyForm"
         >
-            <h2>Add a New Company</h2>
+            <h2 className="caladea-bold text-[28px] text-center text-names">Add a New Company</h2>
             <section className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
                 <div className="flex flex-col justify-center items-center">
-                    <span>Company Name: </span>
+                    <span className="text-names caladea-bold text-[20px]">Company Name: </span>
                     <input
                         className="bg-input placeholder:text-slate-400 text-black-700 text-sm border border-input-border-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow max-w-[250px] min-w-[150px]"
                         type="text"
@@ -17,7 +17,7 @@ const CompanyForm = ({ onSubmit, handleCompanyNameChange, handleJobTitleNameChan
                     />
                 </div>
                 <div className="flex flex-col justify-center items-center"> 
-                    <span>Job Title: </span>
+                    <span className="text-names caladea-bold text-[20px]">Job Title: </span>
                     <input
                         className="bg-input placeholder:text-slate-400 text-slate-700 text-sm border border-input-border-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow max-w-[250px] min-w-[150px]"
                         type="text"
@@ -27,7 +27,7 @@ const CompanyForm = ({ onSubmit, handleCompanyNameChange, handleJobTitleNameChan
                     />
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <span>Location: </span>
+                    <span className="text-names caladea-bold text-[20px]">Location: </span>
                     <input
                     className="bg-input placeholder:text-slate-400 text-slate-700 text-sm border border-input-border-200 rounded-md px-3 py-1.5 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow max-w-[250px] min-w-[150px]"
                     type="text"

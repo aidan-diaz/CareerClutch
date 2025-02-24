@@ -3,6 +3,31 @@
 @theme {
     --color-background-orange: #be6f37;
     --color-card-cream: #eeb77d;
+    --color-names: #14142e;
     --color-input: #f7d8ab;
     --color-input-border: #14142e;
-  }
+}
+
+.caladea-regular {
+  font-family: "Caladea", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caladea-bold {
+  font-family: "Caladea", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.caladea-regular-italic {
+  font-family: "Caladea", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.caladea-bold-italic {
+  font-family: "Caladea", serif;
+  font-weight: 700;
+  font-style: italic;
+}
