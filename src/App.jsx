@@ -91,13 +91,17 @@ function App() {
 
   const addCompany = (event) => {
     event.preventDefault()
-    if(findExisting('companyName', newCompanyName).length 
+    if(!(newCompanyName && newJobTitle && newLocation && newLink)) {
+      alert('Please enter all fields.')
+    }else {
+      if(findExisting('companyName', newCompanyName).length 
       && findExisting('jobTitle', newJobTitle).length 
       && findExisting('location', newLocation).length) {
       alert(`Company Name: ${newCompanyName}, Job Title: ${newJobTitle}, Location: ${newLocation} already exists on Hitlist`)
       setNewCompanyName('')
       setNewJobTitle('')
       setNewLocation('')
+      setLink('')
     }else {
       companyService
       .createNewCompany(companyObject)
@@ -107,6 +111,8 @@ function App() {
     setNewCompanyName('')
     setNewJobTitle('')
     setNewLocation('')
+    setLink('')
+    }
     }
   }
 
