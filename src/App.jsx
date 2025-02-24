@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import CompanyForm from './components/CompanyForm'
 import Company from "./components/Company"
 import companyService from './services/companies'
 
@@ -7,6 +8,7 @@ function App() {
   const [companies, setCompanies] = useState([])
   const [newCompanyName, setNewCompanyName] = useState('')
   const [newJobTitle, setNewJobTitle] = useState('')
+  const [newLocation, setNewLocation] = useState('')
   const [companyFilter, setCompanyFilter] = useState('')
 
   useEffect(() => {
@@ -42,6 +44,7 @@ function App() {
   return (
     <div>
       <h1>test</h1>
+      <CompanyForm />
       <ul>
       {
         companies.map(company => 
@@ -50,6 +53,7 @@ function App() {
             id={company.id}
             name={company.companyName}
             title={company.jobTitle}
+            location={company.location}
             onClick={deleteExistingCompany}
           />
         )
