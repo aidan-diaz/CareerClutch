@@ -1,6 +1,6 @@
-const DeleteCompanyButton = () => {
+const DeleteCompanyButton = ({ onClick }) => {
     return (
-        <button>Delete Company</button>
+        <button onClick={onClick} >Delete Company</button>
     )
 }
 

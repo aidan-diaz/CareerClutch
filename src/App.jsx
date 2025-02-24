@@ -23,6 +23,22 @@ function App() {
     jobTitle: newJobTitle
   }
 
+  const deleteExistingCompany = (event) => {
+    const companyId = event.target.closest('li').id
+    const selectedCompany = companies.filter(company => company.id === companyId)[0].name
+    if(window.confirm(`Delete ${selectedCompany} from Hitlist?`)) {
+      companyService
+        .deleteCompany(companyId)
+        .then(deletedCompany => {
+          console.log(deletedCompany)
+          const updatedCompanies = companies.filter(company => company.id !== deletedCompany.id)
+          setCompanies(updatedCompanies)
+        })
+    }else {
+      alert(`${selectedCompany} will NOT be deleted.`)
+    }
+  }
+
   return (
     <div>
       <h1>test</h1>
@@ -34,6 +50,7 @@ function App() {
             id={company.id}
             name={company.companyName}
             title={company.jobTitle}
+            onClick={deleteExistingCompany}
           />
         )
       }
