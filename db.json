@@ -1,16 +1,11 @@
 {
   "companies": [
     {
-      "id": "b2ee",
+      "id": "9fc0",
       "companyName": "Google",
-      "jobTitle": "Software Engineer",
-      "location": "Philadelphia"
-    },
-    {
-      "id": "fcd4",
-      "companyName": "Amazon",
-      "jobTitle": "SWE II",
-      "location": "Remote"
+      "jobTitle": "SWE",
+      "location": "Remote",
+      "link": "https://www.linkedin.com/jobs/search/?currentJobId=4152632140&keywords=google&origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&originToLandingJobPostings=4152632140%2C4156602625%2C4156605275"
     }
   ]
 }

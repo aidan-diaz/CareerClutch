@@ -14,6 +14,7 @@ function App() {
   const [newCompanyName, setNewCompanyName] = useState('')
   const [newJobTitle, setNewJobTitle] = useState('')
   const [newLocation, setNewLocation] = useState('')
+  const [newLink, setLink] = useState('')
   const [companyFilter, setCompanyFilter] = useState('')
 
   useEffect(() => {
@@ -27,7 +28,8 @@ function App() {
   const companyObject = {
     companyName: newCompanyName,
     jobTitle: newJobTitle,
-    location: newLocation
+    location: newLocation,
+    link: newLink
   }
 
   const returnFilteredCompanies = () => {
@@ -41,6 +43,7 @@ function App() {
           name={company.companyName}
           title={company.jobTitle}
           location={company.location}
+          link={company.link}
           onClick={deleteExistingCompany}
           />
     )
@@ -55,6 +58,7 @@ function App() {
           name={company.companyName}
           title={company.jobTitle}
           location={company.location}
+          link={company.link}
           onClick={deleteExistingCompany}
         />
       )
@@ -123,6 +127,10 @@ function App() {
     setNewLocation(event.target.value)
   }
 
+  const handleLinkChange = (event) => {
+    setLink(event.target.value)
+  }
+
   const handleFilterChange = (event) => {
     setCompanyFilter(event.target.value)
   }
@@ -157,9 +165,11 @@ function App() {
         handleCompanyNameChange={handleCompanyNameChange}
         handleJobTitleNameChange={handleJobTitleNameChange}
         handleLocationNameChange={handleLocationNameChange}
+        handleLinkChange={handleLinkChange}
         newCompanyName={newCompanyName}
         newJobTitle={newJobTitle}
         newLocation={newLocation}
+        link={newLink}
       />
       <h2 className="text-center mb-[50px] caladea-bold text-[28px] text-names">Your Hitlist</h2>
       <ul
