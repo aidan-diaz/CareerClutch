@@ -71,7 +71,7 @@ function App() {
     const companyId = event.target.closest('li').id
     const selectedForDelete = companies.filter(company => company.id === companyId)[0]
     console.log(selectedForDelete)
-    if(window.confirm(`Delete (Company Name: ${selectedForDelete.companyName}, JobTitle: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) from Hitlist?`)) {
+    if(window.confirm(`Delete (Company Name: ${selectedForDelete.companyName}, Job Title: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) from Hitlist?`)) {
       companyService
         .deleteCompany(companyId)
         .then(deletedCompany => {
@@ -80,7 +80,7 @@ function App() {
           setCompanies(updatedCompanies)
         })
     }else {
-      alert(`(Company Name: ${selectedForDelete.companyName}, JobTitle: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) will NOT be deleted.`)
+      alert(`(Company Name: ${selectedForDelete.companyName}, Job Title: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) will NOT be deleted.`)
     }
   }
 
