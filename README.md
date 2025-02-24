@@ -1,5 +1,5 @@
 # CareerClutch
-![Thumbnail](public/careerClutch.mp4)
+![Thumbnail](public/careerClutchDemo.gif)
 
 Link to Project: (LOCAL ONLY AT THIS TIME)
 
