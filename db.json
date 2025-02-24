@@ -1,16 +1,28 @@
 {
-    "companies": [
-      {
-        "companyName": "company1",
-        "jobTitle": "title1",
-        "location": "location1",
-        "id": 1
-      },
-      {
-        "companyName": "company2",
-        "jobTitle": "title2",
-        "location": "location2",
-        "id": 2
-      }
-    ]
-  }
+  "companies": [
+    {
+      "companyName": "company1",
+      "jobTitle": "title1",
+      "location": "location1",
+      "id": 1
+    },
+    {
+      "companyName": "company2",
+      "jobTitle": "title2",
+      "location": "location2",
+      "id": 2
+    },
+    {
+      "id": "88f5",
+      "companyName": "companyName",
+      "jobTitle": "random title",
+      "location": "here and now"
+    },
+    {
+      "id": "5563",
+      "companyName": "a",
+      "jobTitle": "b",
+      "location": "c"
+    }
+  ]
+}

@@ -26,6 +26,18 @@ function App() {
     location: newLocation
   }
 
+  const addCompany = (event) => {
+    event.preventDefault()
+    companyService
+      .createNewCompany(companyObject)
+      .then(returnedCompany => {
+        setCompanies(companies.concat(returnedCompany))
+      })
+    setNewCompanyName('')
+    setNewJobTitle('')
+    setNewLocation('')
+  }
+
   const handleCompanyNameChange = (event) => {
     setNewCompanyName(event.target.value)
   }
@@ -56,7 +68,15 @@ function App() {
   return (
     <div>
       <h1>test</h1>
-      <CompanyForm />
+      <CompanyForm
+        onSubmit={addCompany}
+        handleCompanyNameChange={handleCompanyNameChange}
+        handleJobTitleNameChange={handleJobTitleNameChange}
+        handleLocationNameChange={handleLocationNameChange}
+        newCompanyName={newCompanyName}
+        newJobTitle={newJobTitle}
+        newLocation={newLocation}
+      />
       <ul>
       {
         companies.map(company => 
