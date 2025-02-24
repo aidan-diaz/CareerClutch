@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import SearchFilter from './components/SearchFilter'
 import CompanyForm from './components/CompanyForm'
 import Company from "./components/Company"
 import companyService from './services/companies'
@@ -81,7 +82,8 @@ function App() {
 
   return (
     <div>
-      <h1>test</h1>
+      <h1>Hitlist</h1>
+      <SearchFilter />
       <CompanyForm
         onSubmit={addCompany}
         handleCompanyNameChange={handleCompanyNameChange}
