@@ -51,7 +51,8 @@ function App() {
 
   const deleteExistingCompany = (event) => {
     const companyId = event.target.closest('li').id
-    const selectedCompany = companies.filter(company => company.id === companyId)[0].name
+    const selectedCompany = companies.filter(company => company.id === companyId)[0].companyName
+    console.log(selectedCompany)
     if(window.confirm(`Delete ${selectedCompany} from Hitlist?`)) {
       companyService
         .deleteCompany(companyId)
