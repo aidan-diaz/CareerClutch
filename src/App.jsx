@@ -84,8 +84,8 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Hitlist</h1>
+    <div className="bg-background-orange h-screen">
+      <h1 className="pt-[40px] mb-[40px] text-center">Title of App</h1>
       <SearchFilter onChange={handleFilterChange} filter={companyFilter} />
       <CompanyForm
         onSubmit={addCompany}
@@ -96,13 +96,16 @@ function App() {
         newJobTitle={newJobTitle}
         newLocation={newLocation}
       />
-      <ul>
+      <h2 className="text-center mb-[50px]">Your Hitlist</h2>
+      <ul
+        className="flex flex-wrap justify-center items-center gap-x-4 gap-y-16"
+      >
       {
         companyFilter ?
 
           companies
           .filter(company => 
-            company.companyName.slice(0, companyFilter.trim().toLowerCase().length) === companyFilter.toLowerCase())
+            company.companyName.slice(0, companyFilter.length).trim().toLowerCase() === companyFilter.toLowerCase())
           .map(company => 
               <Company 
                 key={company.id}

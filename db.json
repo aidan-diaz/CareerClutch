@@ -1,12 +1,6 @@
 {
   "companies": [
     {
-      "id": "88f5",
-      "companyName": "companyName",
-      "jobTitle": "random title",
-      "location": "here and now"
-    },
-    {
       "id": "5563",
       "companyName": "a",
       "jobTitle": "b",
@@ -25,10 +19,10 @@
       "location": "5"
     },
     {
-      "id": "4392",
-      "companyName": "doctor",
-      "jobTitle": "dude",
-      "location": "6"
+      "id": "b3d2",
+      "companyName": "Google",
+      "jobTitle": "Software Engineer",
+      "location": "Remote"
     }
   ]
 }
