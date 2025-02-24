@@ -1,16 +1,44 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
+import Company from "./components/Company"
+import companyService from './services/companies'
 
 function App() {
   const [companies, setCompanies] = useState([])
   const [newCompanyName, setNewCompanyName] = useState('')
-  const [newJobDescription, setNewJobDescription] = useState('')
+  const [newJobTitle, setNewJobTitle] = useState('')
   const [companyFilter, setCompanyFilter] = useState('')
 
+  useEffect(() => {
+    companyService
+      .getAllCompanies()
+      .then(initialCompanies => {
+        setCompanies(initialCompanies)
+      })
+  }, [])
+  console.log('companies: ', companies.length, companies)
+
+  const companyObject = {
+    companyName: newCompanyName,
+    jobTitle: newJobTitle
+  }
+
   return (
-    <>
+    <div>
       <h1>test</h1>
-    </>
+      <ul>
+      {
+        companies.map(company => 
+          <Company 
+            key={company.id}
+            id={company.id}
+            name={company.companyName}
+            title={company.jobTitle}
+          />
+        )
+      }
+      </ul>
+    </div>
   )
 }
 

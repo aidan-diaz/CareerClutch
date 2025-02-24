@@ -1,5 +1,14 @@
 {
     "companies": [
-
+      {
+        "companyName": "company1",
+        "jobTitle": "title1",
+        "id": 1
+      },
+      {
+        "companyName": "company2",
+        "jobTitle": "title2",
+        "id": 2
+      }
     ]
   }
