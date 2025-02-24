@@ -1,5 +1,5 @@
 # CareerClutch
-<img src="public/careerClutchDemo.gif" height="300" width="200" />
+<img src="public/careerClutchDemo.gif" height="400" width="600" />
 
 Link to Project: (LOCAL ONLY AT THIS TIME)
 
