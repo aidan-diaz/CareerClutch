@@ -5,6 +5,7 @@ import SearchFilter from './components/SearchFilter'
 import CompanyForm from './components/CompanyForm'
 import Company from "./components/Company"
 import companyService from './services/companies'
+import Footer from './components/Footer'
 
 function App() {
   const [companies, setCompanies] = useState([])
@@ -99,7 +100,7 @@ function App() {
       />
       <h2 className="text-center mb-[50px] caladea-bold text-[28px] text-names">Your Hitlist</h2>
       <ul
-        className="flex flex-wrap justify-center items-center gap-x-4 gap-y-16 pb-[40px]"
+        className="flex flex-wrap justify-center items-center gap-x-4 gap-y-16 pb-[40px] min-h-[105px]"
       >
       {
         companyFilter ?
@@ -130,6 +131,7 @@ function App() {
           )
         }
       </ul>
+      <Footer />
     </div>
   )
 }
