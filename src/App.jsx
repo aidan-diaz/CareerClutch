@@ -22,7 +22,19 @@ function App() {
 
   const companyObject = {
     companyName: newCompanyName,
-    jobTitle: newJobTitle
+    jobTitle: newJobTitle,
+    location: newLocation
+  }
+
+  const handleCompanyNameChange = (event) => {
+    setNewCompanyName(event.target.value)
+  }
+
+  const handleJobTitleNameChange = (event) => {
+    setNewJobTitle(event.target.value)
+  }
+  const handleLocationNameChange = (event) => {
+    setNewLocation(event.target.value)
   }
 
   const deleteExistingCompany = (event) => {
