@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import Header from './components/Header'
 import SearchFilter from './components/SearchFilter'
 import CompanyForm from './components/CompanyForm'
 import Company from "./components/Company"
@@ -85,7 +86,7 @@ function App() {
 
   return (
     <div className="bg-background-orange h-full caladea-regular">
-      <h1 className="pt-[40px] mb-[40px] text-center text-[36px] caladea-bold">CareerClutch</h1>
+      <Header />
       <SearchFilter onChange={handleFilterChange} filter={companyFilter} />
       <CompanyForm
         onSubmit={addCompany}

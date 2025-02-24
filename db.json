@@ -1,28 +1,3 @@
 {
-  "companies": [
-    {
-      "id": "5563",
-      "companyName": "a",
-      "jobTitle": "b",
-      "location": "c"
-    },
-    {
-      "id": "4ac0",
-      "companyName": "new company",
-      "jobTitle": "new job title",
-      "location": "new location"
-    },
-    {
-      "id": "a16d",
-      "companyName": "dog",
-      "jobTitle": "sleep",
-      "location": "5"
-    },
-    {
-      "id": "b3d2",
-      "companyName": "Google",
-      "jobTitle": "Software Engineer",
-      "location": "Remote"
-    }
-  ]
+  "companies": []
 }
