@@ -149,7 +149,7 @@ function App() {
   }
 
   return (
-    <div className="bg-background-orange h-full caladea-regular">
+    <div className="bg-background-orange min-h-screen caladea-regular">
       <Header />
       <SearchFilter onChange={handleFilterChange} filter={companyFilter} />
       <CompanyForm
