@@ -1,5 +1,5 @@
 # CareerClutch
-![Thumbnail](public/careerClutchDemo.gif)
+<img src="public/careerClutchDemo.gif" height="300" width="200" />
 
 Link to Project: (LOCAL ONLY AT THIS TIME)
 
