@@ -1,18 +1,11 @@
 {
   "companies": [
     {
-      "id": "9fc0",
-      "companyName": "Google",
-      "jobTitle": "SWE",
-      "location": "Remote",
-      "link": "https://www.linkedin.com/jobs/search/?currentJobId=4152632140&keywords=google&origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&originToLandingJobPostings=4152632140%2C4156602625%2C4156605275"
-    },
-    {
-      "id": "3133",
-      "companyName": "Google",
-      "jobTitle": "SWE III",
-      "location": "Remote",
-      "link": "https://www.linkedin.com/jobs/search/?currentJobId=4156602625&keywords=google&origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&originToLandingJobPostings=4152632140%2C4156602625%2C4156605275"
+      "id": "72c1",
+      "companyName": "job",
+      "jobTitle": "job",
+      "location": "job",
+      "link": "https://www.linkedin.com/jobs/search/?currentJobId=4160716174&keywords=meta&origin=BLENDED_SEARCH_RESULT_NAVIGATION_JOB_CARD&originToLandingJobPostings=4164029180%2C4167282879%2C4160716174"
     }
   ]
 }
