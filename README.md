@@ -1,7 +1,7 @@
 # CareerClutch
 <img src="public/careerClutchDemo.gif" height="450" width="800" />
 
-Link to Project: (LOCAL ONLY AT THIS TIME)
+Link to Project: https://career-clutch.netlify.app/
 
 CareerClutch is a hitlisting application that allows users to keep track of companies that they are looking to apply to during their job hunt.
 
