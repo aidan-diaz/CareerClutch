@@ -1,5 +1,6 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/companies'
+// const baseUrl = 'http://localhost:3001/companies'
+const baseUrl = "https://careerclutchapi.onrender.com/companies"
 
 const getAllCompanies = () => {
     const request = axios.get(baseUrl)
