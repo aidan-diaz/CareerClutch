@@ -148,15 +148,16 @@ function App() {
   const deleteExistingCompany = (event) => {
     const companyId = String(event.target.closest('li').id)
     const selectedForDelete = companies.filter(company => String(company.id) === companyId)[0]
+    const selectedId = selectedForDelete.id
     console.log(selectedForDelete)
     if(window.confirm(`Delete (Company Name: ${selectedForDelete.companyName}, Job Title: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) from Hitlist?`)) {
       companyService
         .deleteCompany(companyId)
         .then(deletedCompany => {
-          console.log(deletedCompany)
-          const updatedCompanies = companies.filter(company => String(company.id) !== String(deletedCompany.id))
+          const updatedCompanies = companies.filter(company => String(company.id) !== String(selectedId))
           console.log(updatedCompanies)
-          setCompanies(updatedCompanies)
+          setCompanies([...updatedCompanies])
+
         })
     }else {
       alert(`(Company Name: ${selectedForDelete.companyName}, Job Title: ${selectedForDelete.jobTitle}, Location: ${selectedForDelete.location}) will NOT be deleted.`)
